@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 // show
 router.get('/:id', async (req, res) => {
   const oneHuman = await Human.findById(req.params.id);
-  res.send(oneHuman);
+  res.render('show.ejs', {oneHuman});
 });
 
 // create - form

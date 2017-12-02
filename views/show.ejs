@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= oneHuman.name %> | HOB</title>
+  </head>
+  <body>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Login</a>
+    </nav>
+    <header>
+      <h1>HUMANS OF BLOOMINGTON</h1>
+    </header>
+    <div class="">
+      <h3><%= oneHuman.name %></h3>
+      <img src="<%= oneHuman.image %>" alt="<%= oneHuman.name %> image">
+      <%= oneHuman.currentRole %>
+      <%= oneHuman.hometown %>
+      <%= oneHuman.story %>
+    </div>
+  </body>
+</html>
