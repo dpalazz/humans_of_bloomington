@@ -7,6 +7,7 @@
   <body>
     <nav>
       <a href="#">About</a>
+      <a href="/humansofbloomington/new">Create Human</a>
       <a href="#">Login</a>
     </nav>
     <header>
@@ -14,6 +15,8 @@
     </header>
     <% for (let human of allHumans) { %>
     <a href="/humansofbloomington/<%= human.id %>"><img src="<%= human.image %>"></a>
+    <p><%= human.name %></p>
+    <p><%= human.currentRole %></p>
     <p>Recommend</p>
     <% } %>
     <footer>

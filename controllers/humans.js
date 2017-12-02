@@ -13,12 +13,6 @@ router.get('/', async (req, res) => {
   res.render('index.ejs', {allHumans});
 });
 
-// show
-router.get('/:id', async (req, res) => {
-  const oneHuman = await Human.findById(req.params.id);
-  res.render('show.ejs', {oneHuman});
-});
-
 // create - form
 router.post('/', async (req, res) => {
   try {
@@ -29,6 +23,15 @@ router.post('/', async (req, res) => {
   }
 })
 // create - create
+router.get('/new', (req, res) => {
+  res.render('new.ejs')
+});
+
+// show
+router.get('/:id', async (req, res) => {
+  const oneHuman = await Human.findById(req.params.id);
+  res.render('show.ejs', {oneHuman});
+});
 
 // update - form
 
