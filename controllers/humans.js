@@ -5,6 +5,13 @@ const router = express.Router();
 // ==========
 const Human = require('../models/humans.js');
 
+// MIDDLEWARE
+// ==========
+const methodOverride = require('method-override');
+router.use(express.urlencoded({ extended: false }));
+router.use(express.json());
+router.use(methodOverride('_method'));
+
 // ROUTES
 // ==========
 // index
@@ -13,7 +20,13 @@ router.get('/', async (req, res) => {
   res.render('index.ejs', {allHumans});
 });
 
-// create - form
+// show
+router.get('/:id', async (req, res) => {
+  const oneHuman = await Human.findById(req.params.id);
+  res.render('show.ejs', {oneHuman});
+});
+
+// create - post
 router.post('/', async (req, res) => {
   try {
     const createdHuman = await Human.create(req.body);
@@ -22,20 +35,22 @@ router.post('/', async (req, res) => {
     res.send(err.message);
   }
 })
-// create - create
+
+// create - get
 router.get('/new', (req, res) => {
   res.render('new.ejs')
 });
 
-// show
-router.get('/:id', async (req, res) => {
-  const oneHuman = await Human.findById(req.params.id);
-  res.render('show.ejs', {oneHuman});
+// update - get
+router.get('/:id/edit', async (req, res) => {
+  const editHuman = await Human.findById(req.params.id);
+  res.render('../views/edit.ejs', {editHuman});
 });
 
-// update - form
-
-// update - update
-
+// // update - put
+router.put('/:id', async (req, res) => {
+  await Human.findByIdAndUpdate(req.params.id, req.body);
+  res.redirect('/');
+});
 
 module.exports = router;

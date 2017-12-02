@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const methodOverride = require('method-override');
 const app = express();
 const port = 3000;
 
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use('/humansofbloomington', humansController);
+app.use(methodOverride('method'));
 
 // ROOT ROUTE
 // ==========

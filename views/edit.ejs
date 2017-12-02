@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit </title>
+  </head>
+  <body>
+    <nav>
+      <a href="/humansofbloomington">Back</a>
+      <a href="#">About</a>
+      <a href="#">Login</a>
+    </nav>
+    <header>
+      <h1>HUMANS OF BLOOMINGTON</h1>
+    </header>
+    <h2>Editing <%= editHuman.name %></h2>
+    <form action="/humansofbloomington/<%= editHuman.id %>?_method=PUT" method="POST">
+      <input type="text" name="name" value="<%= editHuman.name %>">
+      <input type="text" name="image" value="<%= editHuman.image %>">
+      <input type="text" name="currentRole" value="<%= editHuman.currentRole %>">
+      <input type="text" name="currentEmployer" value="<%= editHuman.currentEmployer %>">
+      <input type="text" name="hometown" value="<%= editHuman.hometown %>">
+      <input type="text" name="story" value="<%= editHuman.story %>">
+      <input type="submit" name="" value="Edit">
+    </form>
+  </body>
+</html>
