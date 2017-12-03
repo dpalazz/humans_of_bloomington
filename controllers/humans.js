@@ -48,9 +48,15 @@ router.get('/:id/edit', async (req, res) => {
   res.render('../views/edit.ejs', {editHuman});
 });
 
-// // update - put
+// update - put
 router.put('/:id', async (req, res) => {
   await Human.findByIdAndUpdate(req.params.id, req.body);
+  res.redirect('/');
+});
+
+// delete
+router.delete('/:id', async (req, res) => {
+  await Human.findByIdAndRemove(req.params.id);
   res.redirect('/');
 });
 
