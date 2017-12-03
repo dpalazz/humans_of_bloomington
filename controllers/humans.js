@@ -11,6 +11,7 @@ const methodOverride = require('method-override');
 router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 router.use(methodOverride('_method'));
+router.use(express.static('public'));
 
 // ROUTES
 // ==========
@@ -18,12 +19,6 @@ router.use(methodOverride('_method'));
 router.get('/', async (req, res) => {
   const allHumans = await Human.find();
   res.render('index.ejs', {allHumans});
-});
-
-// show
-router.get('/:id', async (req, res) => {
-  const oneHuman = await Human.findById(req.params.id);
-  res.render('show.ejs', {oneHuman});
 });
 
 // create - post
@@ -34,11 +29,17 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.send(err.message);
   }
-})
+});
 
 // create - get
 router.get('/new', (req, res) => {
-  res.render('new.ejs')
+  res.render('new.ejs', {})
+});
+
+// show
+router.get('/:id', async (req, res) => {
+  const oneHuman = await Human.findById(req.params.id);
+  res.render('show.ejs', {oneHuman});
 });
 
 // update - get
