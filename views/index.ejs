@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>HOB</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <nav>
-      <a href="#">About</a>
-      <a href="/humansofbloomington/new">Create Human</a>
-      <a href="#">Login</a>
-    </nav>
-    <header>
-      <h1>HUMANS OF BLOOMINGTON</h1>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <title>Humans of Bloomington</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+  <nav class="nav nav-pills">
+    <li><a href="#">About</a></li>
+    <li><a href="/humansofbloomington/new">Create Human</a></li>
+    <li><a href="#">Login</a></li>
+  </nav>
+  <header>
+    <h1 class="">HUMANS OF BLOOMINGTON</h1>
+  </header>
+  <div class="container">
     <% for (let human of allHumans) { %>
-    <a href="/humansofbloomington/<%= human.id %>"><img src="<%= human.image %>"></a>
-    <p><%= human.name %></p>
-    <p><%= human.currentRole %></p>
-    <p>Recommend</p>
-    <% } %>
+      <div class="row">
+        <div class="col">
+          <a href="/humansofbloomington/<%= human.id %>"><img class="img-responsive" src="<%= human.image %>"></a>
+          <h4><%= human.name %> | <%= human.currentRole %></h4>
+        </div>
+      </div>
+      <% } %>
+    </div>
     <footer>
       <p>Built by a human in Bloomington, Indiana</p>
     </footer>
   </body>
-</html>
+  </html>

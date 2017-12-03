@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title><%= oneHuman.name %> | HOB</title>
-    <link rel="stylesheet" href="style.css">
-
-  </head>
-  <body>
-    <nav>
-      <a href="/humansofbloomington">Back</a>
-      <a href="#">About</a>
-      <a href="#">Login</a>
-    </nav>
-    <header>
-      <h1>HUMANS OF BLOOMINGTON</h1>
-    </header>
-    <div class="">
-      <h3><%= oneHuman.name %></h3>
-      <img src="<%= oneHuman.image %>" alt="<%= oneHuman.name %> image">
-      <%= oneHuman.currentRole %>
-      <%= oneHuman.hometown %>
-      <%= oneHuman.story %>
-      <a href="/humansofbloomington/<%= oneHuman.id %>/edit"><button type="button">Edit</button></a>
-      <form action="/humansofbloomington/<%= oneHuman.id %>?_method=DELETE" method="POST">
-        <input type="submit" name="" value="Delete">
-      </form>
+<head>
+  <meta charset="utf-8">
+  <title><%= oneHuman.name %> | HOB</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body class="container">
+  <nav class="nav nav-pills">
+    <li><a href="/humansofbloomington">Back</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Login</a></li>
+  </nav>
+  <header>
+    <h1><%= oneHuman.name %></h1>
+  </header>
+  <div class="container">
+    <img class="img-responsive" src="<%= oneHuman.image %>" alt="<%= oneHuman.name %> image">
+    <div>
+      <h3><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><%= oneHuman.currentRole %></h3></br>
     </div>
-  </body>
+    <div>
+      <h3><span class="glyphicon glyphicon-pawn" aria-hidden="true"></span><%= oneHuman.currentEmployer %></h3></br>
+    </div>
+    <div>
+      <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><%= oneHuman.hometown %></h3></br>
+    </div>
+    <div>
+      <%= oneHuman.story %>
+    </div>
+  </div>
+  <a href="/humansofbloomington/<%= oneHuman.id %>/edit"><button type="button">Edit</button></a>
+  <form action="/humansofbloomington/<%= oneHuman.id %>?_method=DELETE" method="POST">
+    <input type="submit" name="" value="Delete">
+  </form>
+</div>
+</body>
 </html>

@@ -51,7 +51,7 @@ router.get('/:id/edit', async (req, res) => {
 // update - put
 router.put('/:id', async (req, res) => {
   await Human.findByIdAndUpdate(req.params.id, req.body);
-  res.redirect('/');
+  res.redirect('/humansofbloomington/' + req.params.id);
 });
 
 // delete
