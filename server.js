@@ -31,10 +31,11 @@ app.use(morgan('dev'));
 app.use('/humansofbloomington', humansController);
 app.use(methodOverride('method'));
 app.use(session({
-  secret: "lsadkfj93jfhhhhh",
+  secret: 'lsadkfj93jfhhhhh',
   resave: false,
   saveUninitialized: false
 }));
+app.use('/humansofbloomington/session', sessionsController);
 
 // ROUTES
 // ==========

@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Register | HOB</title>
-  </head>
-  <body>
-    Register
-  </body>
+<head>
+  <% include ../partials/head.ejs %>
+  <title>Register | HOB</title>
+</head>
+<body>
+  <nav class="nav nav-pills">
+    <li><a href="/humansofbloomington">Back</a></li>
+    <li><a href="#">About</a></li>
+  </nav>
+  <header>
+    <h1>HUMANS OF BLOOMINGTON</h1>
+  </header>
+  <div class="container">
+    <form action="/session/register" method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" value="">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" name="password" value="">
+        <button type="submit" class="btn">Register</button>
+      </div>
+    </form>
+  </div>
+</body>
 </html>

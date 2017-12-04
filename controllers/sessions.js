@@ -8,8 +8,13 @@ const Human = require('../models/humans.js');
 // ==========
 // login page
 router.get('/login', (req, res) => {
-  res.render('/humansofbloomington/login.ejs');
-})
+  try {
+    res.render('login.ejs');
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
 // new login
 router.post('/login', async (req, res) => {
   try {
@@ -31,7 +36,7 @@ router.post('/login', async (req, res) => {
 
 // new registration
 router.get('/register', (req, res) => {
-  res.render('humansofbloomington/register.ejs');
+  res.render('register.ejs');
 });
 
 // logout
