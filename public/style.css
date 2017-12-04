@@ -4,7 +4,7 @@
 
 nav {
   padding: 20px 0px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 nav > li > a {
@@ -15,7 +15,7 @@ nav > li > a {
 
 header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 h1 {

@@ -29,14 +29,17 @@ const sessionsController = require('./controllers/sessions.js');
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(morgan('dev'));
-app.use('/humansofbloomington', humansController);
 app.use(methodOverride('method'));
 app.use(session({
   secret: 'lsadkfj93jfhhhhh',
   resave: false,
   saveUninitialized: false
 }));
+app.use(express.static('public'));
+
+// use of controllers
 app.use('/humansofbloomington/session', sessionsController);
+app.use('/humansofbloomington', humansController);
 
 // ROUTES
 // ==========
