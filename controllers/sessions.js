@@ -39,12 +39,6 @@ router.get('/register', (req, res) => {
   res.render('register.ejs');
 });
 
-// logout
-router.get('/logout', (req, res) => {
-  req.session.destroy();
-  res.redirect('/');
-});
-
 // registration encryption
 router.post('/register', async (req, res) => {
   const password = req.body.password;
@@ -60,6 +54,12 @@ router.post('/register', async (req, res) => {
   } catch (err) {
     res.send('Oops! Something went wrong. Human not created!');
   }
+});
+
+// logout
+router.get('/logout', (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
 });
 
 module.exports = router;

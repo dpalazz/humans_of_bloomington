@@ -4,11 +4,12 @@ const morgan = require('morgan');
 const session = require('express-session');
 const methodOverride = require('method-override');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // CONNECT TO DATABASE
 // ==========
-const mongoURI = 'mongodb://localhost:27017/humansofbloomington';
+// Heroku (production/clean) or Local (working/dirty)
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/humansofbloomington';
 mongoose.connect(mongoURI, { useMongoClient: true});
 mongoose.Promise = global.Promise;
 
@@ -57,6 +58,6 @@ app.get('/app', (req, res) => {
 // ==========
 app.listen(port, () => {
   console.log("====================");
-  console.log("Listening...");
+  console.log("Listening..." + port);
   console.log("====================");
 });
