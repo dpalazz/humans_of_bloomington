@@ -8,7 +8,17 @@
   <nav class="nav nav-pills">
     <li><a href="/humansofbloomington">Back</a></li>
     <li><a href="#">About</a></li>
-    <li><a href="#">Login</a></li>
+    <% if (user) { %>
+      <li>Welcome, <%= user %>!</li>
+      <li>
+        <form action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
+          <input type="submit" value="Logout">
+        </form>
+      </li>
+    <% } else { %>
+      <li><a href="/humansofbloomington/session/login">Login</a></li>
+      <li><a href="/humansofbloomington/session/register">Register</a></li>
+    <% } %>
   </nav>
   <header>
     <h1><%= editHuman.name %> (edit)</h1>

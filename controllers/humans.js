@@ -19,7 +19,6 @@ router.use(express.static('public'));
 // index
 router.get('/', async (req, res) => {
   const allHumans = await Human.find();
-  console.log(req.session);
   if (req.session) {
     res.render('index.ejs', {
       allHumans: allHumans,
@@ -51,13 +50,33 @@ router.get('/new', (req, res) => {
 // show
 router.get('/:id', async (req, res) => {
   const oneHuman = await Human.findById(req.params.id);
-  res.render('show.ejs', {oneHuman});
+  if (req.session) {
+    res.render('show.ejs', {
+    oneHuman: oneHuman,
+    user: req.session.username
+    })
+  } else {
+    res.render('index.ejs', {
+      oneHuman: oneHuman,
+      user: false
+    })
+  }
 });
 
 // update - get
 router.get('/:id/edit', async (req, res) => {
   const editHuman = await Human.findById(req.params.id);
-  res.render('../views/edit.ejs', {editHuman});
+  if (req.session) {
+    res.render('../views/edit.ejs', {
+    editHuman: editHuman,
+    user: req.session.username
+    })
+  } else {
+    res.render('../views/edit.ejs', {
+      editHuman: editHuman,
+      user: false
+    })
+  }
 });
 
 // update - put
