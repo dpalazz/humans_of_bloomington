@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const session = require('express-session');
 const methodOverride = require('method-override');
 const app = express();
 const port = 3000;
@@ -20,6 +21,7 @@ db.on('connected', () => console.log('Mongo running... ', mongoURI));
 // CONTROLLERS
 // ==========
 const humansController = require('./controllers/humans.js');
+const sessionsController = require('./controllers/sessions.js');
 
 // MIDDLEWARE
 // ==========
@@ -28,12 +30,27 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use('/humansofbloomington', humansController);
 app.use(methodOverride('method'));
+app.use(session({
+  secret: "lsadkfj93jfhhhhh",
+  resave: false,
+  saveUninitialized: false
+}));
 
-// ROOT ROUTE
+// ROUTES
 // ==========
+// root
 app.get('/', (req, res) => {
-  res.redirect('/humansofbloomington')
+  res.redirect('/humansofbloomington');
 });
+
+// session
+app.get('/app', (req, res) => {
+  if (req.session.user) {
+    res.send('nonsense');
+  } else {
+    res.redirect('/sessions/new');
+  }
+})
 
 //PORT LISTENER
 // ==========

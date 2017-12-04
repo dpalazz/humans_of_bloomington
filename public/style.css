@@ -39,3 +39,8 @@ h4 {
 .glyphicon-briefcase, .glyphicon-pawn, .glyphicon-globe {
   padding-right: 25px;
 }
+
+#story {
+  line-height: 25px;
+  padding-bottom: 20px;
+}

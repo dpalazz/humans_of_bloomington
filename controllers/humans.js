@@ -4,6 +4,7 @@ const router = express.Router();
 // MODELS
 // ==========
 const Human = require('../models/humans.js');
+const User = require('../models/users.js');
 
 // MIDDLEWARE
 // ==========
@@ -18,7 +19,8 @@ router.use(express.static('public'));
 // index
 router.get('/', async (req, res) => {
   const allHumans = await Human.find();
-  res.render('index.ejs', {allHumans});
+  const user = await User.findOne({username: req.body.username});
+    res.render('index.ejs', {allHumans, user})
 });
 
 // create - post
