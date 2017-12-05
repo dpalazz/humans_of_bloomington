@@ -60,7 +60,8 @@ router.post('/register', async (req, res) => {
 });
 
 // logout
-router.get('/logout', (req, res) => {
+router.delete('/logout', (req, res) => {
+  console.log("getting to delete route");
   req.session.destroy();
   res.redirect('/');
 });

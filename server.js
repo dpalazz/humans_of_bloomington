@@ -29,7 +29,7 @@ const sessionsController = require('./controllers/sessions.js');
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(methodOverride('method'));
+app.use(methodOverride('_method'));
 app.use(session({
   secret: 'lsadkfj93jfhhhhh',
   resave: false,
