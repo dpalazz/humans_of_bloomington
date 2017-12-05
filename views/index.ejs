@@ -5,6 +5,7 @@
   <title>Humans of Bloomington</title>
 </head>
 <body>
+  <div class="wrapper">
   <nav>
     <ul class="nav nav-pills" role="navigation">
       <% if (user) { %>
@@ -35,12 +36,14 @@
         <% for (let human of allHumans) { %>
           <div class="row">
           <div class="col">
-            <a href="/humansofbloomington/<%= human.id %>"><img class="img-responsive" src="<%= human.image %>"></a>
-            <h4><%= human.name %> | <%= human.currentRole %></h4>
+          <div class="view hm-zoom"><a href="/humansofbloomington/<%= human.id %>"><img class="img-responsive" src="<%= human.image %>"></a><div class="mask"</div></div>
+          <h4><%= human.name %> | <%= human.currentRole %></h4>
           </div>
           </div>
           <% } %>
         </div>
+        <div class="push"></div>
+      </div>
         <footer class="footer">
           <% include ../partials/footer.ejs %>
         </footer>

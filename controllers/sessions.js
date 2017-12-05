@@ -20,12 +20,16 @@ router.post('/login', async (req, res) => {
   console.log(req.body.username);
   try {
     const user = await User.findOne({username: req.body.username});
-    if (bcrypt.compareSync(req.body.password, user.password)) {
-      req.session.message = '';
-      req.session.username = req.body.username;
-      req.session.logged = true;
-      req.session.currentuser = user;
-      res.redirect('/');
+    if (user !== null) {
+      if (bcrypt.compareSync(req.body.password, user.password)) {
+        req.session.message = '';
+        req.session.username = req.body.username;
+        req.session.logged = true;
+        req.session.currentuser = user;
+        res.redirect('/');
+      } else {
+        res.send('You entered the wrong username or password. Please try again!');
+      }
     } else {
       res.send('You entered the wrong username or password. Please try again!');
     }
