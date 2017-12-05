@@ -24,11 +24,10 @@ router.post('/login', async (req, res) => {
       req.session.message = '';
       req.session.username = req.body.username;
       req.session.logged = true;
-      console.log(req.session);
+      req.session.currentuser = user;
       res.redirect('/');
     } else {
-      res.session.message = 'You entered the wrong username or password. Please try again!';
-      res.redirect('humansofbloomington/login')
+      res.send('You entered the wrong username or password. Please try again!');
     }
   } catch (err) {
     res.send(err.message);

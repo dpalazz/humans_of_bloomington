@@ -10,7 +10,9 @@
       <li role="presentation"><a href="/humansofbloomington">Back</a></li>
       <% if (user) { %>
         <li role="presentation">Signed in as <%= user %></li>
-        <li role="presentation"><form action="/humansofbloomington/session/logout?_method=DELETE" method="POST"><input type="submit" value="Logout"></form></li>
+        <li role="presentation"><form action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
+        <input type="submit" class="btn btn-default" value="Logout">
+        </form></li>
         <% } else { %>
           <li role="presentation"><a href="/humansofbloomington/session/login">Login</a></li>
           <li role="presentation"><a href="/humansofbloomington/session/register">Register</a></li>
@@ -35,9 +37,9 @@
           <%= oneHuman.story %>
         </div>
         <% if (user) { %>
-          <a href="/humansofbloomington/<%= oneHuman.id %>/edit"><button type="button">Edit</button></a>
+          <a href="/humansofbloomington/<%= oneHuman.id %>/edit"><button type="button" class="btn btn-default">Edit</button></a>
           <form action="/humansofbloomington/<%= oneHuman.id %>?_method=DELETE" method="POST">
-          <input type="submit" name="" value="Delete">
+          <input type="submit" class="btn btn-default" value="Delete">
           </form>
           <form action="/humansofbloomington/<%= oneHuman.id %>/star?_method=PUT" method="POST">
           <div id="star-div">
@@ -51,7 +53,7 @@
             </div>
             <% } %>
           </div>
-          <footer class="footer">
+          <footer class="footer navbar-fixed-bottom">
           <% include ../partials/footer.ejs %>
         </footer>
       </body>
