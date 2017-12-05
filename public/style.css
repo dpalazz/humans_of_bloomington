@@ -23,18 +23,14 @@ header {
 }
 
 .jumbotron {
-  margin: auto;
   max-width: 95%;
-  margin-bottom: 30px;
+  margin: auto;
+  margin-bottom: 50px;
   text-align: center;
 }
 
-.jumbotron > .container {
-  padding: 0px 50px;
-}
-
-.jumbotron > .another-container {
-  text-align: right
+.jumbotron > .container > .lead {
+  text-align: right;
 }
 
 h1 {
