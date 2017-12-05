@@ -5,19 +5,21 @@
   <title>Humans of Bloomington</title>
 </head>
 <body>
-  <nav class="nav nav-pills">
-    <% if (user) { %>
-      <li><a href="/humansofbloomington/new">Create New Profile</a></li>
-      <li>Welcome, <%= user %>!</li>
-      <li>
-      <form action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
-      <input type="submit" value="Logout">
-      </form>
-      </li>
-      <% } else { %>
-        <li><a href="/humansofbloomington/session/login">Login</a></li>
-        <li><a href="/humansofbloomington/session/register">Register</a></li>
-        <% } %>
+  <nav>
+    <ul class="nav nav-pills" role="navigation">
+      <% if (user) { %>
+        <li role="presentation"><a href="/humansofbloomington/new">Create New Profile</a></li>
+        <li role="presentation">Singed in as <%= user %></li>
+        <li role="Presentation">
+        <form action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
+        <input type="submit" value="Logout">
+        </form>
+        </li>
+        <% } else { %>
+          <li role="presentation"><a href="/humansofbloomington/session/login">Login</a></li>
+          <li role="presentation"><a href="/humansofbloomington/session/register">Register</a></li>
+          <% } %>
+        </ul>
       </nav>
       <header>
         <h1>HUMANS OF BLOOMINGTON</h1>
