@@ -28,10 +28,10 @@ router.post('/login', async (req, res) => {
         req.session.currentuser = user;
         res.redirect('/');
       } else {
-        res.send('You entered the wrong username or password. Please try again!');
+        res.render('wronglogin.ejs');
       }
     } else {
-      res.send('You entered the wrong username or password. Please try again!');
+      res.send('wronglogin.ejs');
     }
   } catch (err) {
     res.send(err.message);

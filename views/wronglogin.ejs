@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head.ejs %>
+  <title>Login | HOB</title>
+</head>
+<body>
+  <div class="wrapper">
+  <nav>
+    <ul class="nav nav-pills" role="navigation">
+      <li role="presentation"><a href="/humansofbloomington">Back</a></li>
+      <li role="presentation"><a href="/humansofbloomington/session/register">Register</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>HUMANS OF BLOOMINGTON</h1>
+  </header>
+  <div class="container">
+    <form action="/humansofbloomington/session/login" method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" name="password">
+        <p id="wrong">You entered the wrong username or password. Please try again!<p>
+        <input type="submit" class="btn btn-default" value="Login">
+      </div>
+    </form>
+  </div>
+  <div class="push"></div>
+</div>
+  <footer class="footer">
+    <% include ../partials/footer.ejs %>
+  </footer>
+</body>
+</html>

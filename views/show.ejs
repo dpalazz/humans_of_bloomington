@@ -6,57 +6,57 @@
 </head>
 <body>
   <div class="wrapper">
-  <nav>
-    <ul class="nav nav-pills" role="navigation">
-      <li role="presentation"><a href="/humansofbloomington">Back</a></li>
-      <% if (user) { %>
-        <li role="presentation">Signed in as <%= user %></li>
-        <li role="presentation"><form action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
-        <input type="submit" class="btn btn-default" value="Logout">
-        </form></li>
-        <% } else { %>
-          <li role="presentation"><a href="/humansofbloomington/session/login">Login</a></li>
-          <li role="presentation"><a href="/humansofbloomington/session/register">Register</a></li>
-          <% } %>
-        </ul>
-      </nav>
-      <header>
-        <h1><%= oneHuman.name %></h1>
-      </header>
-      <div class="container">
-        <img class="img-responsive" src="<%= oneHuman.image %>" alt="<%= oneHuman.name %> image">
-        <div>
-          <h3><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><%= oneHuman.currentRole %></h3></br>
-        </div>
-        <div>
-          <h3><span class="glyphicon glyphicon-pawn" aria-hidden="true"></span><%= oneHuman.currentEmployer %></h3></br>
-        </div>
-        <div>
-          <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><%= oneHuman.hometown %></h3></br>
-        </div>
-        <div id="story">
-          <%= oneHuman.story %>
-        </div>
-        <div class="show-wrap">
-          <% if (user) { %>
-            <a href="/humansofbloomington/<%= oneHuman.id %>/edit"><button type="button" class="btn btn-default">Edit</button></a>
-            <form action="/humansofbloomington/<%= oneHuman.id %>?_method=DELETE" method="POST">
-            <input type="submit" class="btn btn-default" value="Delete">
-            </form>
-            <form action="/humansofbloomington/<%= oneHuman.id %>/star?_method=PUT" method="POST">
-            <div id="star-div">
-            <button class="star"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> <%= oneHuman.starQty %> Stars</button>
-            </div></br>
-            <% } else { %>
-              <div id="star-div">
-              <div class="starry"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></div>
-              <p><%= oneHuman.starQty %> Stars</p>
-              </div>
-              <% } %>
-            </div>
+    <nav class="navbar" role="navigation">
+      <a class="navbar-brand" href="/humansofbloomington">HUMANS OF BLOOMINGTON</a>
+      <ul class="navbar-nav">
+        <% if (user) { %>
+          <li class="nav-item">Signed in as <%= user %></li>
+          <li class="nav-item"><form action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
+          <input type="submit" class="btn btn-default" value="Logout">
+          </form></li>
+          <% } else { %>
+            <li class="nav-item"><a href="/humansofbloomington/session/login">Login</a></li>
+            <li class="nav-item"><a href="/humansofbloomington/session/register">Register</a></li>
+            <% } %>
+          </ul>
+        </nav>
+        <header>
+          <h1><%= oneHuman.name %></h1>
+        </header>
+        <div class="container">
+          <img class="img-responsive" src="<%= oneHuman.image %>" alt="<%= oneHuman.name %> image">
+          <div>
+            <h3><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><%= oneHuman.currentRole %></h3></br>
           </div>
-          <div class="push"></div>
-        </div>
+          <div>
+            <h3><span class="glyphicon glyphicon-pawn" aria-hidden="true"></span><%= oneHuman.currentEmployer %></h3></br>
+          </div>
+          <div>
+            <h3><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><%= oneHuman.hometown %></h3></br>
+          </div>
+          <div id="story">
+            <%= oneHuman.story %>
+          </div>
+          <div class="show-wrap">
+            <% if (user) { %>
+              <a href="/humansofbloomington/<%= oneHuman.id %>/edit"><button type="button" class="btn btn-default">Edit</button></a>
+              <form action="/humansofbloomington/<%= oneHuman.id %>?_method=DELETE" method="POST">
+              <input type="submit" class="btn btn-default" value="Delete">
+              </form>
+              <form action="/humansofbloomington/<%= oneHuman.id %>/star?_method=PUT" method="POST">
+              <div id="star-div">
+              <button class="star"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> <%= oneHuman.starQty %> Stars</button>
+              </div></br>
+              <% } else { %>
+                <div id="star-div">
+                <div class="starry"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></div>
+                <p><%= oneHuman.starQty %> Stars</p>
+                </div>
+                <% } %>
+              </div>
+            </div>
+            <div class="push"></div>
+          </div>
           <footer class="footer">
             <% include ../partials/footer.ejs %>
           </footer>
