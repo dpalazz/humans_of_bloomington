@@ -63,6 +63,16 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// star button
+router.put('/:id/star', async (req, res) => {
+  try {
+    const starHuman = await Human.findByIdAndUpdate(req.params.id, { $inc: {starQty: +1}});
+    res.redirect('back');
+  } catch (err) {
+    res.send(err.message);
+  }
+});
+
 // update - get
 router.get('/:id/edit', async (req, res) => {
   const editHuman = await Human.findById(req.params.id);
