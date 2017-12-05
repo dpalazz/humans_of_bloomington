@@ -40,6 +40,12 @@ h4 {
   padding-right: 25px;
 }
 
+#star-div {
+  background-color: rgba(167, 158, 160, .2);
+  text-align: center;
+  font-size: 15px;
+}
+
 #story {
   line-height: 25px;
   padding-bottom: 20px;
