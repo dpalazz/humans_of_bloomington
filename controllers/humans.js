@@ -22,7 +22,8 @@ router.get('/', async (req, res) => {
   if (req.session) {
     res.render('index.ejs', {
       allHumans: allHumans,
-      user: req.session.username
+      user: req.session.username,
+      userDbEntry: req.body.username
     });
   } else {
     res.render('index.ejs', {

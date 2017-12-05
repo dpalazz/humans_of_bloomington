@@ -42,7 +42,6 @@ router.get('/register', (req, res) => {
 
 // registration encryption
 router.post('/register', async (req, res) => {
-  console.log(req.body.password);
   const password = req.body.password;
   const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
   const user = await User.find({username: req.body.username});
