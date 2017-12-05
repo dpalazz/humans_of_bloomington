@@ -45,16 +45,21 @@ router.post('/register', async (req, res) => {
   console.log(req.body.password);
   const password = req.body.password;
   const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
-  const userDbEntry = {};
-  userDbEntry.username = req.body.username;
-  userDbEntry.password = passwordHash;
-  try {
-    const user = await User.create(userDbEntry);
-    req.session.username = user.username;
-    req.session.logged = true;
-    res.redirect('/');
-  } catch (err) {
-    res.send('Oops! Something went wrong. Human not created!');
+  const user = await User.find({username: req.body.username});
+  if (user.length === 0) {
+    const userDbEntry = {};
+    userDbEntry.username = req.body.username;
+    userDbEntry.password = passwordHash;
+    try {
+      const user = await User.create(userDbEntry);
+      req.session.username = user.username;
+      req.session.logged = true;
+      res.redirect('/');
+    } catch (err) {
+      res.send('Oops! Something went wrong. Human not created!');
+      }
+  } else {
+    res.send('We\'re sorry. That username is already taken. Please try another!')
   }
 });
 
