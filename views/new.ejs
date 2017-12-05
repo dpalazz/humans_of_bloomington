@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= include ../partials/head.ejs %>
+    <% include ../partials/head.ejs %>
   </head>
   <body class="container">
     <nav class="nav nav-pills">
@@ -12,13 +12,21 @@
       <h1>HUMANS OF BLOOMINGTON</h1>
     </header>
     <form class="" action="/humansofbloomington" method="POST">
-      <input type="text" name="name" placeholder="Full Name">
-      <input type="text" name="image" placeholder="Image url">
-      <input type="text" name="currentRole" placeholder="Current Job Title">
-      <input type="text" name="currentEmployer" placeholder="Current Employer">
-      <input type="text" name="hometown" placeholder="Your hometown">
-      <input type="text" name="story" placeholder="Your story">
-      <input type="submit" name="" value="Create Human">
+      <div class="form-group">
+        <label for="name">First and Last Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Full Name">
+        <label for="image">Image URL</label>
+        <input type="text" class="form-control" name="image" placeholder="Image url">
+        <label for="currentRole">Current Job Title</label>
+        <input type="text" class="form-control" name="currentRole" placeholder="Current Job Title">
+        <label for="currentEmployer">Current Employer/Business</label>
+        <input type="text" class="form-control" name="currentEmployer" placeholder="Current Employer">
+        <label for="hometown">Place of Origin (Hometown)</label>
+        <input type="text" class="form-control" name="hometown" placeholder="Your hometown">
+        <label for="story">Your Story</label>
+        <input type="text" class="form-control" name="story" placeholder="Your story">
+        <input type="submit" class="btn" value="Create Human">
+      </div>
     </form>
     <footer class="footer">
       <% include ../partials/footer.ejs %>

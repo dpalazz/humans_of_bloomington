@@ -9,11 +9,7 @@
     <li><a href="/humansofbloomington">Back</a></li>
     <% if (user) { %>
       <li>Welcome, <%= user %>!</li>
-      <li>
-        <form action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
-          <input type="submit" value="Logout">
-        </form>
-      </li>
+      <li><form action="/humansofbloomington/session/logout?_method=DELETE" method="POST"><input type="submit" value="Logout"></form></li>
     <% } else { %>
       <li><a href="/humansofbloomington/session/login">Login</a></li>
       <li><a href="/humansofbloomington/session/register">Register</a></li>
@@ -44,8 +40,8 @@
   </div>
   <% } else { %>
     <div id="star-div">
-    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-    <p>Likes</p>
+    <a href="#"<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></a>
+    <p># Stars</p>
     </div>
   <% } %>
 </div>
