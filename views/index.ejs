@@ -25,18 +25,11 @@
       <header>
         <h1>HUMANS OF BLOOMINGTON</h1>
       </header>
-      <div class="jumbotron">
-        <div class="container">
-          <h2 class="display-3">"Humankind has not woven the web of life. We are but one thread within it. Whatever we do to the web, we do to ourselves. All things are bound together. All things connect."</h2>
-          <p class="lead"><i>- Chief Seattle, Duwamish</i></p>
-          <%# <p><a class="btn btn-default btn-lg" href="#" role="button">Join</a></p>%>
-        </div>
-      </div>
       <div class="container">
         <% for (let human of allHumans) { %>
           <div class="row">
           <div class="col">
-          <div class="view hm-zoom"><a href="/humansofbloomington/<%= human.id %>"><img class="img-responsive" src="<%= human.image %>"></a><div class="mask"</div></div>
+          <div class="view"><a href="/humansofbloomington/<%= human.id %>"><img class="img-responsive" src="<%= human.image %>"></a><div class="mask"</div></div>
           <h4><%= human.name %> | <%= human.currentRole %></h4>
           </div>
           </div>

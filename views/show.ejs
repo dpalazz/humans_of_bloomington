@@ -45,9 +45,8 @@
             </form>
             <form action="/humansofbloomington/<%= oneHuman.id %>/star?_method=PUT" method="POST">
             <div id="star-div">
-            <button class="star"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></button>
-            <p><%= oneHuman.starQty %> Stars</p>
-            </div>
+            <button class="star"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> <%= oneHuman.starQty %> Stars</button>
+            </div></br>
             <% } else { %>
               <div id="star-div">
               <div class="starry"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></div>
