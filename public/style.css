@@ -35,17 +35,6 @@ h1 {
   max-width: 95%;
 }
 
-.show-page-contain {
-  max-width: 70%;
-}
-
-.stats {
-  background-color: rgb(228, 227, 228);
-  padding: 20px 40px;
-  margin-right: 20px;
-  margin-top: 20px;
-}
-
 .col {
   margin-bottom: 60px;
 }
@@ -76,12 +65,23 @@ h4 {
   width: 30px;
   height: 30px;
   margin: auto;
-  padding-top: 5px;
+  padding-top: 10px;
   padding-left: 2px;
 }
 
+.show-page-contain {
+  max-width: 70%;
+}
+
 .show-wrap {
-  margin-bottom: 40px;
+  text-align: center;
+}
+
+.stats {
+  background-color: rgb(228, 227, 228);
+  padding: 20px 40px;
+  margin-right: 50px;
+  margin-bottom: 30px;
 }
 
 #story {
@@ -92,10 +92,6 @@ h4 {
 .btn-default {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.show-wrap {
-  text-align: center;
 }
 
 .footer {
