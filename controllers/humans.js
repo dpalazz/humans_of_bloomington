@@ -18,6 +18,8 @@ router.use(express.static('public'));
 // ==========
 // index
 router.get('/', async (req, res) => {
+  console.log(req.session.currentuser);
+
   const allHumans = await Human.find();
   if (req.session) {
     res.render('index.ejs', {
@@ -47,7 +49,6 @@ router.post('/', async (req, res) => {
 // create - get
 router.get('/new', async (req, res) => {
   const user = await User.findOne({username: req.session.username});
-  console.log(user);
   if (req.session.username) {
     res.render('../views/new.ejs', {
     user: user

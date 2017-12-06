@@ -56,7 +56,7 @@ router.post('/register', async (req, res) => {
       const user = await User.create(userDbEntry);
       req.session.username = user.username;
       req.session.logged = true;
-      res.redirect('/');
+      res.redirect('/humansofbloomington/session/login');
     } catch (err) {
       res.render('wrongregister.ejs');
       }
