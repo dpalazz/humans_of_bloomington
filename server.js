@@ -57,6 +57,10 @@ app.get('/app', (req, res) => {
   }
 })
 
+app.get('/test', (req, res) => {
+  res.send(req.session);
+});
+
 //PORT LISTENER
 // ==========
 app.listen(port, () => {

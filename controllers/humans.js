@@ -63,7 +63,7 @@ router.get('/new', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const oneHuman = await Human.findById(req.params.id);
   console.log(oneHuman);
-  console.log(req.session);
+  console.log(req.session.currentuser);
   if (req.session) {
     res.render('show.ejs', {
     oneHuman: oneHuman,

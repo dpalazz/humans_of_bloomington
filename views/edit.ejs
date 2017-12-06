@@ -12,7 +12,7 @@
           <li><a href="/humansofbloomington">Back</a></li>
           <% if (user) { %>
             <li>Welcome, <%= user %>!</li>
-            <form class="navbar-form navbar-right" action="/logout?_method=DELETE" method="POST">
+            <form class="navbar-form navbar-right logger" action="/logout?_method=DELETE" method="POST">
             <input type="submit" value="Logout">
             </form>
           <% } else { %>
