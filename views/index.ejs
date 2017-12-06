@@ -11,9 +11,9 @@
         <ul class="nav navbar-nav navbar-right">
         <% if (user) { %>
           <li><a href="/humansofbloomington/new">Create New Profile</a></li>
-          <p class="navbar-text navbar-right">Welcome, <%= user %>!</li>
+          <p class="navbar-text navbar-right">Welcome, <%= user %>!</p>
           <form class="navbar-form navbar-right" role="logout" action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
-              <input type="submit" value="Logout">
+              <input class="btn btn-default" type="submit" value="Logout">
           </form>
         <% } else { %>
             <li><a href="/humansofbloomington/session/login">Login</a></li>

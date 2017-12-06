@@ -17,7 +17,6 @@ router.get('/login', (req, res) => {
 
 // new login
 router.post('/login', async (req, res) => {
-  console.log(req.body.username);
   try {
     const user = await User.findOne({username: req.body.username});
     if (user !== null) {

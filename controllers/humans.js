@@ -44,8 +44,17 @@ router.post('/', async (req, res) => {
 });
 
 // create - get
-router.get('/new', (req, res) => {
-  res.render('new.ejs', {})
+router.get('/new', async (req, res) => {
+  const user = User.findOne({username: req.session.username});
+  if (req.session.username) {
+    res.render('../views/new.ejs', {
+    user: user
+    });
+  } else {
+    res.render('../views/new.ejs', {
+    user: false
+    });
+  }
 });
 
 // show

@@ -17,6 +17,10 @@ html, body {
   margin-bottom: 20px;
 }
 
+.navbar-text {
+  margin-right: 20px;
+}
+
 header {
   text-align: center;
   margin: 50px;
@@ -29,6 +33,17 @@ h1 {
 
 .container {
   max-width: 95%;
+}
+
+.show-page-contain {
+  max-width: 70%;
+}
+
+.stats {
+  background-color: rgb(228, 227, 228);
+  padding: 20px 40px;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
 .col {
@@ -48,13 +63,9 @@ h4 {
   padding-right: 25px;
 }
 
-#star-div {
-  text-align: center;
-  font-size: 15px;
-}
-
 .star {
-  padding-top: 4px;
+  padding-top: 6px;
+  padding-bottom: 5px;
   padding-right: 10px;
   padding-left: 11px;
   margin: 10px;
@@ -67,6 +78,10 @@ h4 {
   margin: auto;
   padding-top: 5px;
   padding-left: 2px;
+}
+
+.show-wrap {
+  margin-bottom: 40px;
 }
 
 #story {
@@ -85,7 +100,7 @@ h4 {
 
 .footer {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 100px;
 }
 
 .footer, .push{
