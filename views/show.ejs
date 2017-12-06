@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/humansofbloomington">Back</a></li>
-        <% if (oneHuman) { %>
+        <% if (user) { %>
           <p class="navbar-text navbar-right">Welcome, <%= user.username %>!</p>
           <form class="navbar-form navbar-right logger" action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
           <input type="submit" class="btn btn-default" value="Logout">
@@ -28,22 +28,29 @@
     <div class="container show-page-contain clearfix">
         <img class="img-responsive show-page-img" src="<%= oneHuman.image %>" alt="<%= oneHuman.name %> image">
         <div class="show-wrap">
-          <% if (user._id+'' === oneHuman.user+'') { %>
-            <a href="/humansofbloomington/<%= oneHuman.id %>/edit"><button type="button" class="btn btn-default">Edit</button></a>
-            <form action="/humansofbloomington/<%= oneHuman.id %>?_method=DELETE" method="POST">
-              <input type="submit" class="btn btn-default" value="Delete">
-            </form>
-            <form action="/humansofbloomington/<%= oneHuman.id %>/star?_method=PUT" method="POST">
-              <div id="star-div">
-                <button class="star"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> <%= oneHuman.starQty %> Stars</button>
-              </div><hr>
-            </form>
+          <% if (user) { %>
+            <% if (user._id+'' === oneHuman.user+'') { %>
+              <a href="/humansofbloomington/<%= oneHuman.id %>/edit"><button type="button" class="btn btn-default">Edit</button></a>
+              <form action="/humansofbloomington/<%= oneHuman.id %>?_method=DELETE" method="POST">
+                <input type="submit" class="btn btn-default" value="Delete">
+              </form>
+              <form action="/humansofbloomington/<%= oneHuman.id %>/star?_method=PUT" method="POST">
+                <div id="star-div">
+                  <button class="star"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> <%= oneHuman.starQty %> Stars</button>
+                </div><hr>
+              </form>
+              <% } else { %>
+                <div id="star-div">
+                  <div class="starry"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></div>
+                  <p><%= oneHuman.starQty %> Stars</p><hr>
+                </div>
+              <% } %>
             <% } else { %>
               <div id="star-div">
                 <div class="starry"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></div>
                 <p><%= oneHuman.starQty %> Stars</p><hr>
               </div>
-              <% } %>
+            <% } %>
           </div>
         <div class="stats pull-left">
         <div>
