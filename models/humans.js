@@ -7,7 +7,8 @@ const humansSchema = new mongoose.Schema({
   currentEmployer: { type: String, required: true },
   hometown: { type: String, required: true },
   story: { type: String, required: true },
-  starQty: Number
+  starQty: Number,
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 
 module.exports = mongoose.model('Human', humansSchema);

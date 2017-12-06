@@ -21,6 +21,7 @@
   <header>
     <h1>HUMANS OF BLOOMINGTON</h1>
   </header>
+  <p><%= user._id %></p>
   <form class="" action="/humansofbloomington" method="POST">
     <div class="form-group">
       <label for="name">First and Last Name</label>
@@ -35,6 +36,7 @@
       <input type="text" class="form-control" name="hometown" placeholder="Your hometown">
       <label for="story">Your Story</label>
       <input type="text" class="form-control" name="story" placeholder="Your story">
+      <input type="hidden" name="user" value="<%= user._id %>">
       <input type="submit" class="btn btn-default" value="Create Human">
     </div>
   </form>

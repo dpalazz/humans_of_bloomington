@@ -10,8 +10,8 @@
       <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/humansofbloomington">Back</a></li>
-        <% if (user) { %>
-          <p class="navbar-text navbar-right">Welcome, <%= user %>!</p>
+        <% if (oneHuman) { %>
+          <p class="navbar-text navbar-right">Welcome, <%= user.username %>!</p>
           <form class="navbar-form navbar-right logger" action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
           <input type="submit" class="btn btn-default" value="Logout">
           </form>
@@ -28,7 +28,7 @@
     <div class="container show-page-contain clearfix">
         <img class="img-responsive show-page-img" src="<%= oneHuman.image %>" alt="<%= oneHuman.name %> image">
         <div class="show-wrap">
-          <% if (user === oneHuman.name) { %>
+          <% if (user._id+'' === oneHuman.user+'') { %>
             <a href="/humansofbloomington/<%= oneHuman.id %>/edit"><button type="button" class="btn btn-default">Edit</button></a>
             <form action="/humansofbloomington/<%= oneHuman.id %>?_method=DELETE" method="POST">
               <input type="submit" class="btn btn-default" value="Delete">

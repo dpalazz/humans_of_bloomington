@@ -35,6 +35,7 @@ router.get('/', async (req, res) => {
 
 // create - post
 router.post('/', async (req, res) => {
+  console.log(req.body);
   try {
     const createdHuman = await Human.create(req.body);
     res.redirect('/');
@@ -45,7 +46,8 @@ router.post('/', async (req, res) => {
 
 // create - get
 router.get('/new', async (req, res) => {
-  const user = User.findOne({username: req.session.username});
+  const user = await User.findOne({username: req.session.username});
+  console.log(user);
   if (req.session.username) {
     res.render('../views/new.ejs', {
     user: user
@@ -60,15 +62,16 @@ router.get('/new', async (req, res) => {
 // show
 router.get('/:id', async (req, res) => {
   const oneHuman = await Human.findById(req.params.id);
+  console.log(oneHuman);
+  console.log(req.session);
   if (req.session) {
     res.render('show.ejs', {
     oneHuman: oneHuman,
-    user: req.session.username
+    user: req.session.currentuser
     })
   } else {
-    res.render('index.ejs', {
-      oneHuman: oneHuman,
-      user: false
+    res.render('show.ejs', {
+    oneHuman: oneHuman,
     })
   }
 });
