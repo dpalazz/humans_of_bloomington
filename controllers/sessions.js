@@ -59,10 +59,10 @@ router.post('/register', async (req, res) => {
       req.session.logged = true;
       res.redirect('/');
     } catch (err) {
-      res.send('Oops! Something went wrong. Human not created!');
+      res.render('wrongregister.ejs');
       }
   } else {
-    res.send('We\'re sorry. That username is already taken. Please try another!')
+    res.render('wrongregister.ejs')
   }
 });
 

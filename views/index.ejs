@@ -6,39 +6,39 @@
 </head>
 <body>
   <div class="wrapper">
-  <nav>
-    <ul class="nav" role="navigation">
-      <% if (user) { %>
-        <li><a href="/humansofbloomington/new">Create New Profile</a></li>
-        <li>Signed in as <%= user %></li>
-        <li>
-        <form action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
-        <input type="submit" class="btn btn-default" value="Logout">
-        </form>
-        </li>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+        <% if (user) { %>
+          <li><a href="/humansofbloomington/new">Create New Profile</a></li>
+          <p class="navbar-text navbar-right">Welcome, <%= user %>!</li>
+          <form class="navbar-form navbar-right" role="logout" action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
+              <input type="submit" value="Logout">
+          </form>
         <% } else { %>
-          <li><a href="/humansofbloomington/session/login">Login</a></li>
-          <li><a href="/humansofbloomington/session/register">Register</a></li>
-          <% } %>
+            <li><a href="/humansofbloomington/session/login">Login</a></li>
+            <li><a href="/humansofbloomington/session/register">Register</a></li>
+        <% } %>
         </ul>
-      </nav>
-      <header>
-        <h1>HUMANS OF BLOOMINGTON</h1>
-      </header>
-      <div class="container">
-        <% for (let human of allHumans) { %>
-          <div class="row">
-          <div class="col">
-          <div class="view"><a href="/humansofbloomington/<%= human.id %>"><img class="img-responsive" src="<%= human.image %>"></a><div class="mask"</div></div>
-          <h4><%= human.name %> | <%= human.currentRole %></h4>
-          </div>
-          </div>
-          <% } %>
-        </div>
-        <div class="push"></div>
       </div>
-        <footer class="footer">
-          <% include ../partials/footer.ejs %>
-        </footer>
-      </body>
-      </html>
+    </nav>
+    <header>
+      <h1>HUMANS OF BLOOMINGTON</h1>
+    </header>
+    <div class="container">
+      <% for (let human of allHumans) { %>
+        <div class="row">
+        <div class="col">
+        <div class="view"><a href="/humansofbloomington/<%= human.id %>"><img class="img-responsive" src="<%= human.image %>"></a><div class="mask"</div></div>
+        <h4><%= human.name %> | <%= human.currentRole %></h4>
+        </div>
+        </div>
+        <% } %>
+      </div>
+      <div class="push"></div>
+    </div>
+    <footer class="footer">
+      <% include ../partials/footer.ejs %>
+    </footer>
+  </body>
+  </html>
