@@ -36,11 +36,19 @@ h1 {
 }
 
 .container {
-  max-width: 95%;
+  max-width: 90%;
 }
 
 .col {
   margin-bottom: 60px;
+}
+
+.view {
+  /*max-width: 100%;*/
+}
+
+.hover-over:hover {
+  border: 5px solid white;
 }
 
 h4 {
