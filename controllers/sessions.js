@@ -31,7 +31,7 @@ router.post('/login', async (req, res) => {
         res.render('wronglogin.ejs');
       }
     } else {
-      res.send('wronglogin.ejs');
+      res.render('wronglogin.ejs');
     }
   } catch (err) {
     res.send(err.message);

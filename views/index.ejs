@@ -7,18 +7,18 @@
 <body>
   <div class="wrapper">
   <nav>
-    <ul class="nav nav-pills" role="navigation">
+    <ul class="nav" role="navigation">
       <% if (user) { %>
-        <li role="presentation"><a href="/humansofbloomington/new">Create New Profile</a></li>
-        <li role="presentation">Signed in as <%= user %></li>
-        <li role="Presentation">
+        <li><a href="/humansofbloomington/new">Create New Profile</a></li>
+        <li>Signed in as <%= user %></li>
+        <li>
         <form action="/humansofbloomington/session/logout?_method=DELETE" method="POST">
         <input type="submit" class="btn btn-default" value="Logout">
         </form>
         </li>
         <% } else { %>
-          <li role="presentation"><a href="/humansofbloomington/session/login">Login</a></li>
-          <li role="presentation"><a href="/humansofbloomington/session/register">Register</a></li>
+          <li><a href="/humansofbloomington/session/login">Login</a></li>
+          <li><a href="/humansofbloomington/session/register">Register</a></li>
           <% } %>
         </ul>
       </nav>
