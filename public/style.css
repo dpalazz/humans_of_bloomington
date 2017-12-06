@@ -21,6 +21,10 @@ html, body {
   margin-right: 20px;
 }
 
+.logger > .btn-default {
+  margin: 0px;
+}
+
 header {
   text-align: center;
   margin: 50px;
@@ -48,6 +52,10 @@ h4 {
   color: red;
 }
 
+.form-group > .form-control {
+    margin-bottom: 20px;
+}
+
 .glyphicon-briefcase, .glyphicon-pawn, .glyphicon-globe {
   padding-right: 25px;
 }
@@ -73,8 +81,20 @@ h4 {
   max-width: 70%;
 }
 
+.show-page-img {
+  margin-bottom: 10px;
+}
+
 .show-wrap {
   text-align: center;
+}
+
+.show-wrap > a {
+  margin-right: 10px;
+}
+
+.show-wrap > form {
+  display: inline;
 }
 
 .stats {
