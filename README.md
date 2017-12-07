@@ -9,9 +9,10 @@ Heroku is a cloud platform as a service that was used as my web application depl
 - [Atom](https://atom.io/) - Text editor
 - [Postman](https://www.getpostman.com/) - Testing software
 - [NPM](https://www.npmjs.com/) - Package manager
+- [Bootstrap](https://getbootstrap.com/)
 
 ## The Approach
-Overall, I used the MVC file structure approach of Models, Views and Controllers. I had two models with 7 RESTful routes and full CRUD. The dependencies I used included Express, Mongoose, Espress-session, Bcrypt, EJS, Method-Override. I built the routes for the index page and a create route to start with some data to help visualize the strategy. After testing with Postman, I then built out all the additional CRUD routes I would need, creating a new EJS file with each route. Once I had the routes functioning, I starting building in authentication code and slightly adjusting the views based on the user session.
+Overall, I used the MVC file structure approach of Models, Views and Controllers. I had two models with 7 RESTful routes and full CRUD. I used EJS partials, Bootstrap, and a customized CSS stylesheet. The dependencies I used included Express, Mongoose, Espress-session, Bcrypt, EJS, Method-Override. I built the routes for the index page and a create route to start with some data to help visualize the strategy. After testing with Postman, I then built out all the additional CRUD routes I would need, creating a new EJS file with each route. Once I had the routes functioning, I starting building in authentication code and slightly adjusting the views based on the user session.
 
 ## User Stories
 As a user who simply wants to browse the app, I can view images on the index page which link to individual show pages where I can see personal stats, view how many stars were given to this profile, and read their story.
