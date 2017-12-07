@@ -19,7 +19,7 @@ As a user who simply wants to browse the app, I can view images on the index pag
 As a user who is interesting in having a profile on the app, I can register to use the app by clicking register, then login with that information. If I enter the wrong username or password, it prompts me to retry. Once logged in, I can create a new profile by clicking on that navigation item and adding in the data fields for each form item. Once I create a profile, I am able to browse others' pages as I did before but now I can "star" them if I desire. Also, when viewing my own page, I can edit or delete the profile I created. There is a logout button in the navigation if I want to logout at any time during my session.
 
 ## Unsolved Issues/Future To-Dos
-Additional features could include a login modal, a default image if a user does not upload one, a second show page to help with scalability as more users are generated for easier viewing, a Google map of all the hometowns to show how bloomington is a melting pot.
+Additional features could include a login modal, a default image if a user does not upload one, a second show page to help with scalability as more users are generated for easier viewing, a Google map of all the hometowns.
 
 ## Guest Account
 If you visit the app live, feel free to use the guest account I created to browse and see functionality and features. The username is guest and password is guest.
