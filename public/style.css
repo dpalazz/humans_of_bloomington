@@ -63,23 +63,25 @@ h4 {
 
 img:before {
   content: " ";
-  background-image: url(http://via.placeholder.com/1280x1024);
+  background-image: url(http://via.placeholder.com/1024x768);
   display: block;
   width: 1170px;
   height: 800px;
   max-width: 100%;
   overflow: none;
+  background-repeat: no-repeat;
 }
 
 .show-page-img:before {
   content: " ";
-  background-image: url(http://via.placeholder.com/1024x768);
+  background-image: url(http://via.placeholder.com/960x640);
   display: block;
   width: 1000px;
   height: 500px;
   margin: auto;
   max-width: 100%;
   overflow: none;
+  background-repeat: no-repeat;
 }
 
 /*login and register pages*/

@@ -39,7 +39,6 @@ router.get('/', async (req, res) => {
 
 // create - post
 router.post('/', async (req, res) => {
-  console.log(req.body);
   try {
     const createdHuman = await Human.create(req.body);
     res.redirect('/');
@@ -65,8 +64,6 @@ router.get('/new', async (req, res) => {
 // show
 router.get('/:id', async (req, res) => {
   const oneHuman = await Human.findById(req.params.id);
-  console.log(oneHuman);
-  console.log(req.session.currentuser);
   if (req.session) {
     res.render('show.ejs', {
     oneHuman: oneHuman,
