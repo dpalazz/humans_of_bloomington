@@ -1,7 +1,7 @@
 /*FULL PAGE*/
 /*==================================*/
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Merriweather", serif;
 }
 
 html, body {
@@ -21,6 +21,10 @@ html, body {
   margin-bottom: 20px;
 }
 
+li > a {
+  font-family: "Roboto", sans-serif;
+}
+
 .navbar-brand {
   list-style: none;
 }
@@ -37,6 +41,7 @@ html, body {
 
 .navbar-text {
   margin-right: 20px;
+  font-family: "Roboto", sans-serif;
 }
 
 .logger > .btn-default {
@@ -53,6 +58,7 @@ header {
 h1 {
   font-weight: 600;
   font-size: 55px;
+  font-family: "Roboto", sans-serif;
 }
 
 /*MAIN BODY*/
@@ -67,7 +73,7 @@ h1 {
 }
 
 .hover-over:hover {
-  border: 5px solid white;
+  opacity: 0.7;
 }
 
 h4 {
@@ -132,6 +138,7 @@ img:before {
 
 .show-page-contain {
   max-width: 70%;
+  font-size: 18px;
 }
 
 .show-page-img {
