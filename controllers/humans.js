@@ -64,10 +64,12 @@ router.get('/new', async (req, res) => {
 // show
 router.get('/:id', async (req, res) => {
   const oneHuman = await Human.findById(req.params.id);
+  console.log(oneHuman);
   if (req.session) {
     res.render('show.ejs', {
-    oneHuman: oneHuman,
-    user: req.session.currentuser
+      story: oneHuman.story.split('\n'),
+      oneHuman: oneHuman,
+      user: req.session.currentuser
     })
   } else {
     res.render('show.ejs', {

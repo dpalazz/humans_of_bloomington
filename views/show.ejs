@@ -64,7 +64,11 @@
         </div>
       </div>
         <div id="story">
-          <%= oneHuman.story %>
+          <% for (let i=0; i < story.length; i++) { %>
+                <%= story[i] %>
+                <p></p>
+          <% } %>
+
         </div>
         </div>
         <div class="push"></div>
