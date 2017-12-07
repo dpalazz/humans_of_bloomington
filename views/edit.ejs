@@ -8,8 +8,8 @@
   <div class="wrapper">
     <nav class="navbar navbar-default">
       <div class="container-fluid">
+        <li class="navbar-brand"><a href="/humansofbloomington">HUMANS OF BLOOMINGTON</a></li>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/humansofbloomington">Back</a></li>
           <% if (user) { %>
             <li>Welcome, <%= user %>!</li>
             <form class="navbar-form navbar-right logger" action="/logout?_method=DELETE" method="POST">

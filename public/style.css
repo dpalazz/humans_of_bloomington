@@ -21,6 +21,20 @@ html, body {
   margin-bottom: 20px;
 }
 
+.navbar-brand {
+  list-style: none;
+}
+
+.navbar-brand > a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-brand > a:hover {
+  color: grey;
+}
+
 .navbar-text {
   margin-right: 20px;
 }
