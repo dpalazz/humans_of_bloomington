@@ -26,7 +26,7 @@
       <h1><%= oneHuman.name %></h1>
     </header>
     <div class="container show-page-contain clearfix">
-        <img class="img-responsive show-page-img" src="<%= oneHuman.image %>" alt="<%= oneHuman.name %> image">
+        <img class="img-responsive show-page-img" src="<%= oneHuman.image %>">
         <div class="show-wrap">
           <% if (user) { %>
             <% if (user._id+'' === oneHuman.user+'') { %>
@@ -37,7 +37,7 @@
               <div id="star-div">
                 <div class="starry"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></div>
                 <p><%= oneHuman.starQty %> Stars</p><hr>
-              </div>
+                </div>
               <% } else { %>
                 <form action="/humansofbloomington/<%= oneHuman.id %>/star?_method=PUT" method="POST">
                   <div id="star-div">

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const humansSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  image: { type: String, required: true },
+  image: { type: String },
   currentRole: { type: String, required: true },
   currentEmployer: { type: String, required: true },
   hometown: { type: String, required: true },

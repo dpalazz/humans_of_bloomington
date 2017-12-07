@@ -1,3 +1,5 @@
+/*FULL PAGE*/
+/*==================================*/
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -12,6 +14,8 @@ html, body {
   margin-bottom: -100px;
 }
 
+/*NAVIGATION*/
+/*==================================*/
 .navbar {
   background-color: white;
   margin-bottom: 20px;
@@ -25,6 +29,8 @@ html, body {
   margin: 0px;
 }
 
+/*HEADER*/
+/*=====================================*/
 header {
   text-align: center;
   margin: 50px;
@@ -35,16 +41,15 @@ h1 {
   font-size: 55px;
 }
 
+/*MAIN BODY*/
+/*=====================================*/
+/*index page*/
 .container {
   max-width: 90%;
 }
 
 .col {
   margin-bottom: 60px;
-}
-
-.view {
-  /*max-width: 100%;*/
 }
 
 .hover-over:hover {
@@ -56,14 +61,38 @@ h4 {
   text-align: center;
 }
 
+img:before {
+  content: " ";
+  background-image: url(http://via.placeholder.com/1280x1024);
+  display: block;
+  width: 1170px;
+  height: 800px;
+  max-width: 100%;
+  overflow: none;
+}
+
+.show-page-img:before {
+  content: " ";
+  background-image: url(http://via.placeholder.com/1024x768);
+  display: block;
+  width: 1000px;
+  height: 500px;
+  margin: auto;
+  max-width: 100%;
+  overflow: none;
+}
+
+/*login and register pages*/
 #wrong {
   color: red;
 }
 
+/*edit page*/
 .form-group > .form-control {
     margin-bottom: 20px;
 }
 
+/*show page*/
 .glyphicon-briefcase, .glyphicon-pawn, .glyphicon-globe {
   padding-right: 25px;
 }
@@ -122,6 +151,8 @@ h4 {
   margin-bottom: 10px;
 }
 
+/*FOOTER*/
+/*=====================================*/
 .footer {
   text-align: center;
   margin-top: 100px;
