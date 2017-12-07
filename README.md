@@ -5,23 +5,23 @@ This web application features portraits and special interest profiles of individ
 Heroku is a cloud platform as a service that was used as my web application deployment model. To deploy this on a live system, visit https://humansofbloomington.herokuapp.com/.
 
 ## Built With
-Node.js, Express, MongoDB, HTML, CSS, JavaScript.
-[Atom](https://atom.io/) - Text editor
-[Postman] (https://www.getpostman.com/) - Testing software
+- Node.js, Express, MongoDB, HTML, CSS, JavaScript.
+- [Atom](https://atom.io/) - Text editor
+- [Postman](https://www.getpostman.com/) - Testing software
 
 ## The Approach
-The dependencies I used includeD Express, Mongoose, Espress-session, Bcrypt, EJS, Method-Override. I built the routes for the index page and a create route to start with some data to help visualize the strategy. After testing with Postman, I then built out all the additional CRUD routes I would need, creating a new EJS file with each route. Once I had the routes functioning, I starting building in authentication code and slightly adjusting the views based on the user session.
+The dependencies I used included Express, Mongoose, Espress-session, Bcrypt, EJS, Method-Override. I built the routes for the index page and a create route to start with some data to help visualize the strategy. After testing with Postman, I then built out all the additional CRUD routes I would need, creating a new EJS file with each route. Once I had the routes functioning, I starting building in authentication code and slightly adjusting the views based on the user session.
 
 ## Guest Account
 If you visit the app live, feel free to use the guest account I created to browse and see functionality and features. The username is guest and password is guest.
 
 ## Author
-Dana Palazzo [GitHub] (https://github.com/dpalazz)
+Dana Palazzo [GitHub](https://github.com/dpalazz)
 
 ## Other Resources/Acknowledgments
 - Hat tip to 2017/18 WDIR classmates
 
-- Images from [Unsplash] (https://unsplash.com/)
+- Images from [Unsplash](https://unsplash.com/)
   - Additional acknowledgements for images:
     - Andrae Ricketts on Unsplash
     - Malvestida Magazine on Unsplash
@@ -29,4 +29,4 @@ Dana Palazzo [GitHub] (https://github.com/dpalazz)
     - Ryan Holloway on Unsplash
     - Chuttersnap on Unsplash
 
-- Inspiration from [Humans of New York](http://www.humansofnewyork.com/) & [The Techies Project] (http://www.techiesproject.com/)
+- Inspiration from [Humans of New York](http://www.humansofnewyork.com/) & [The Techies Project](http://www.techiesproject.com/)
