@@ -30,6 +30,7 @@ li > a {
 }
 
 .navbar-brand > a {
+  color: black;
   font-weight: bold;
   text-decoration: none;
 }
